@@ -24,14 +24,14 @@ class Login extends MX_Controller {
         $pass = $this->encryptIt($this->input->post('password'));
         $res = $this->login_model->check_login($email,$pass);
         if (count($res) > 0){
-            $this->session->set_userdata('login_id', $res[0]['id']);
+            $this->session->set_userdata('login_id', $res[0]['login_id']);
             $this->session->set_userdata('type' ,$res[0]['user_type']);
             $this->session->set_userdata('email' ,$res[0]['email']);
             $this->session->set_userdata('password',$res[0]['password']);
        
             if($res[0]['user_type']==1){
                 redirect('admin','refresh');
-            }elseif($res[0]['user_type']==3){   
+            }else if($res[0]['user_type']==3){   
                 $this->session->set_flashdata('type', 'success');
                 $this->session->set_flashdata('msg', 'Welcome To Your Dashboard ');
                 redirect('user','refresh');

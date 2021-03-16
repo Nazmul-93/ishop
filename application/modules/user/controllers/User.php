@@ -12,13 +12,11 @@ class User extends MX_Controller {
         $this->load->library('cart');
         $this->load->library("session");
         $this->load->helper(array('form', 'url'));
-       $this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->model('home/home_model');
-        $this->load->model('category_model');
         $this->load->model('admin/admin_model');
-       $this->load->model('product/product_model');
-       $this->user_login_id =$this->session->userdata('login_id');
-          $this->load->library('email');
+        $this->user_login_id =$this->session->userdata('login_id');
+        $this->load->library('email');
         $this->load->library('sendsms_library');
         if(!$this->user_login_id){
              redirect('/login');

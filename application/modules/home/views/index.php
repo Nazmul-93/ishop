@@ -12,7 +12,7 @@
     <link rel="icon" href="frontassets/images/favicon.png">
 <?php $this->load->view('front/header_link')?> 
 <body class="js">
-	<!-- Preloader -->
+	<!-- Preloader --> 
 	<div class="preloader">
 		<div class="preloader-inner">
 			<div class="preloader-icon">
@@ -47,7 +47,7 @@
 								<li><i class="ti-location-pin"></i> Store location</li>
 								<li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
 								<li><i class="ti-user"></i> <a href="page">My account</a></li>
-								<li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+								<li><i class="ti-power-off"></i><a href="login">Login</a></li>
 							</ul>
 						</div>
 						<!-- End Top Right -->
@@ -263,11 +263,15 @@
 							<div class="row">
 								<div class="col-lg-7 col-12">
 									<div class="hero-text">
+									<?php foreach ($slide as $key => $row) { ?>
 										<h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
 										<p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
+										<img  style="width: 1900px; height:700px;" src="<?php echo base_url('uploads/slide/'.$row['slide_img'])?>" alt="Banner Header 1">
 										<div class="button">
-											<a href="#" class="btn">Shop Now!</a>
+											<a href="" class="btn">Shop Now!</a>
 										</div>
+										
+										<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -355,12 +359,13 @@
 								<div class="tab-pane fade show active" id="man" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
+											<?php foreach($Products as $row){ ?>
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
 														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+															<img style="height: 450px; wigdth: 550px;" class="default-img" src="<?php echo base_url('uploads/product/'.$row['product_img'])?>" alt="#">
+															<img class="hover-img" src="<?php echo base_url('uploads/product/'.$row['product_img'])?>" alt="#">
 														</a>
 														<div class="button-head">
 															<div class="product-action">
@@ -381,6 +386,7 @@
 													</div>
 												</div>
 											</div>
+											<?php }?>
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">

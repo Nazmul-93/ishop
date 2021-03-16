@@ -28,23 +28,23 @@
 				</div>
 			<?php } ?>
 				<div class="form-group frm_grp">
-					<input type="text" name="f_name"  id="f_name" tabindex="1" class="form-control form_input" placeholder="First Name" value="">
+					<input type="text" name="f_name"  id="f_name" tabindex="1" class="form-control form_input" placeholder="First Name" value="" required>
 				</div>
 				<div class="form-group frm_grp">
-					<input type="text" name="l_name"  id="l_name" tabindex="1" class="form-control form_input" placeholder="Last Name" value="">
+					<input type="text" name="l_name"  id="l_name" tabindex="1" class="form-control form_input" placeholder="Last Name" value="" required>
 				</div>
 				<div class="form-group frm_grp">
-					<input type="text" name="email"  id="email" tabindex="1" class="form-control form_input" placeholder="Email address " value="">
+					<input type="text" name="email"  id="email" tabindex="1" class="form-control form_input" placeholder="Email address " value="" required>
 				</div>
 				<div class="form-group frm_grp">
-					<input type="text" name="phone_number"  id="phone_number" tabindex="1" class="form-control form_input" placeholder="Phone Number" value="">
+					<input type="text" name="phone_number"  id="phone_number" tabindex="1" class="form-control form_input" placeholder="Phone Number" value="" required>
 				</div>
 				<div class="form-group frm_grp">
-					<input type="password" name="password" id="password" tabindex="2" class="form-control form_input" placeholder="Password">
+					<input type="password" name="password" id="password" tabindex="2" class="form-control form_input" placeholder="Password" required>
 				</div>
 				<?=$this->session->flashdata('msg');?>
 				<div class="form-group frm_grp">
-					<input type="password" name="con_password" id="con_password" tabindex="2" class="form-control form_input" placeholder="Confirm Password">
+					<input type="password" name="con_password" id="con_password" tabindex="2" class="form-control form_input" placeholder="Confirm Password" required>
 				</div>
 				<div class="form-group"> 
 					<div class="row">
@@ -57,7 +57,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="text-left">
-								<a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+								<a href="login" tabindex="5" class="forgot-password">Have another Account?</a>
 							</div>
 						</div>
 					</div>

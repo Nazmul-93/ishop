@@ -48,14 +48,47 @@ class MX_Controller
 		
 		/* copy a loader instance and initialize */
 		$this->load = clone load_class('Loader');
-		$this->load->initialize($this);	
+		$this->load->initialize($this);
+		// $this->load->model('Brand_model');
 		
 		/* autoload module items */
 		$this->load->_autoloader($this->autoload);
+		
+		$this->load->library('email');
+        $this->load->library("session");
 	}
 	
 	public function __get($class) 
 	{
-		return CI::$APP->$class;
+		return CI::$APP->$class; 
+	} 
+	
+	public function resize($width, $height, $source, $destination)
+    {
+        $this->load->library('image_lib'); 
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = "uploads/".$source."/";
+        $config['overwrite'] = TRUE;
+        $config['quality'] = "100%";
+        $config['maintain_ratio'] = FALSE;
+        $config['master_dim'] = 'height';
+        $config['height'] = $height;
+        $config['width'] = $width;
+        $config['new_image'] = "uploads/".$destination."/";
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();
 	}
+	
+	public function setSessionSuccessMessage($msg)
+    {
+        $this->session->set_flashdata('type', "success");
+        $this->session->set_flashdata('msg', ucwords($msg));
+    }
+
+    public function setSessionErrorMessage($msg)
+    {
+        $this->session->set_flashdata('type', "danger");
+        $this->session->set_flashdata('msg', ucwords($msg));
+    }
+	
 }

@@ -12,7 +12,6 @@ class Home extends MX_Controller {
         $this->load->model('home_model');
         $this->load->model('category_model');
         $this->load->model('admin/Admin_model');
-       $this->load->model('product/product_model');
        $login_id =  $this->user_login_id = $this->session->userdata('login_id');
 
     }
@@ -21,8 +20,10 @@ class Home extends MX_Controller {
     {
        
         // $data['content']='index';
-
-        $this->load->view('index');
+        $data['slide']=$this->home_model->select_with_where('*','status=1','slides');
+        $data['Products']=$this->home_model->select_with_where('*','status=1','Products');
+       
+        $this->load->view('index',$data);
         
     }
 

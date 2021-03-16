@@ -22,7 +22,7 @@ class Cart extends MX_Controller {
 	function index()
 	{
 		
-		$data['content']='cart';
+		$data['content']='cart'; 
 
         $this->load->view('master/master',$data);
 

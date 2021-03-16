@@ -19,16 +19,14 @@ class Regs extends MX_Controller {
         $this->load->model('category_model');
         $this->load->model('home_model');
         $this->load->model('admin/admin_model');
-       $this->load->model('product/product_model');
         $this->load->model('regs/Regs_model');
-         $this->load->library('sendsms_library');
-          $this->load->library('email');
+        $this->load->library('sendsms_library');
+        $this->load->library('email');
 
     }
 
     public function index(){
         $data['login_id']=  $this->user_login_id;
-        
         $data['content']='regs';
         $this->load->view('master/master',$data);
         }
@@ -42,16 +40,15 @@ class Regs extends MX_Controller {
         $data_login['l_name']=$this->input->post('l_name');
         $data_login['email']=$email;
         $data_login['phone_number']=$this->input->post('phone_number');
-        if($password!=$con_password){
+        if($password==$con_password){
+            $data_login['password']=$this->encryptIt($password);
+        }else{
             $msg = 'Password not matched!';
             $this->session->set_flashdata('msg', $msg);
             redirect('regs','refresh');
-        }else{
-            $data_login['password']=$this->encryptIt($password);
         }
         $data_login['created_at']= date('Y-m-d H:i:s');
         $data_login['user_type']=3;
-        $email=$this->input->post('email');
         $dataemail=count($this->Regs_model->select_with_where('*','email="'.$email.'"','user_login')); 
          
         if($dataemail==0){
