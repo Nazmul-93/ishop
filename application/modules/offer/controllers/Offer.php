@@ -40,7 +40,7 @@ class Offer extends MX_Controller {
 		
 	}
 	
-	public function add(){
+	public function add(){ 
 		$data['content']='add';
         $data['script']='script';
         $this->load->view('master/backend_master',$data);
@@ -49,10 +49,10 @@ class Offer extends MX_Controller {
 	public function save(){
         
         $this->form_validation->set_rules('offer_name','Offer Title ','required');
-        $this->form_validation->set_rules('offer_type','Offer Code ','required');
-        $this->form_validation->set_rules('offer_amount','Offer Code ','required');
-        $this->form_validation->set_rules('offer_start_date','Offer Code ','required');
-        $this->form_validation->set_rules('offer_end_date','Offer Code ','required');
+        $this->form_validation->set_rules('offer_type','Offer Type','required');
+        $this->form_validation->set_rules('offer_amount','Offer Amount','required');
+        $this->form_validation->set_rules('offer_start_date','Offer Start Date','required');
+        $this->form_validation->set_rules('offer_end_date','Offer End Date ','required');
         if ($this->form_validation->run()==FALSE) {
               $this->add();
         }else{

@@ -46,7 +46,9 @@ class Brand extends MX_Controller {
 	
 	public function save(){
         $this->form_validation->set_rules('brand_name','Brand Name','required');
-        $this->form_validation->set_rules('brand_img','Brand Image','required');
+            if (empty($_FILES['brand_img']['name'])) {
+                $this->form_validation->set_rules('brand_img','Image','required');
+            }
         if ($this->form_validation->run()==FALSE) {
               $this->add();
         }else{
@@ -91,7 +93,6 @@ class Brand extends MX_Controller {
 	
 	public function update($id){
         $this->form_validation->set_rules('brand_name','Brand Name','required');
-        $this->form_validation->set_rules('brand_img','Brand Image','required');
         if ($this->form_validation->run()==FALSE) {
               $this->edit($id);
         }else{

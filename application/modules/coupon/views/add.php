@@ -16,7 +16,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Coupon Code</label>
                             <div class="input-group col">
-                                <input class="form-control" id="couponcode"  name="coupon_code"placeholder="i.e y2v5b3">
+                                <input class="form-control" id="couponcode"  name="coupon_code"placeholder="i.e y2v5b3" required>
                             </div>
                             <span id="couponcode_result"></span>
                         </div>
@@ -42,20 +42,20 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Discount Amount</label>
                             <div class="input-group col">
-                                <input class="form-control" name="discount"placeholder="i.e 50TK">
+                                <input class="form-control" name="discount"placeholder="i.e 50TK" required>
                             </div>
                         </div>
                         
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Coupon Start Date</label>
                             <div class="input-group col">
-                                <input type="date" class="form-control"name="start_date">
+                                <input type="date" class="form-control"name="start_date" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Coupon End Date</label>
                             <div class="input-group col">
-                                <input type="date" class="form-control" name="end_date">
+                                <input type="date" class="form-control" name="end_date" required>
                             </div>
                         </div>
                         

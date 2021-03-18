@@ -44,7 +44,7 @@ class Product extends MX_Controller {
         $data['script']='script';
         $this->load->view('master/backend_master',$data);
 		
-	}
+	} 
 	
 	public function add(){
         $data['brand_data'] = $this->Brand_model->select_all('brands');
@@ -58,15 +58,11 @@ class Product extends MX_Controller {
         $this->form_validation->set_rules('product_name', 'DELL', 'required');
         $this->form_validation->set_rules('product_code', '0001', 'required');
         $this->form_validation->set_rules('product_price', '10000', 'required');
-        $this->form_validation->set_rules('product_img', 'image', 'required');
-        
+            if (empty($_FILES['product_img']['name'])) {
+                $this->form_validation->set_rules('product_img', 'image', 'required');
+            }
         if($this->form_validation->run()==FALSE){
-        // $data['empty_field'] = TRUE;
-        // $this->setSessionSuccessMessage('filed is required');
-        //     $this->session->set_flashdata('type', 'success');
-		// $this->session->set_flashdata('msg', 'Data Updated Successfully');
             redirect('product/add', 'refresh');
-            
 		}else{
         $data['created_by'] = $this->user_login_id;
         $data['product_name'] = $this->input->post('product_name');

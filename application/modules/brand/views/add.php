@@ -26,7 +26,7 @@
                             <div class="col-md-9">
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div>
-                                        <input type="file" name="brand_img"onchange="readURL(this);" >&nbsp;&nbsp;&nbsp;
+                                        <input type="file" name="brand_img"onchange="readURL(this);" required>&nbsp;&nbsp;&nbsp;
                                         <img id="brand_img" >
                                     </div>
                                 </div> 

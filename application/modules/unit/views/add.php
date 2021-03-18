@@ -16,7 +16,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Unit Name</label>
                             <div class="input-group col">
-                                <input class="form-control" id="unitname" name="unit_name"placeholder="i.e Litter">
+                                <input class="form-control" id="unitname" name="unit_name"placeholder="i.e Litter" required>
                             </div>
                             <span id="unitname_result"></span>
                         </div>

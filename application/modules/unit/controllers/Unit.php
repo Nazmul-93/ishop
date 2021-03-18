@@ -51,7 +51,7 @@ class Unit extends MX_Controller {
         $this->form_validation->set_rules('unit_name','Unit Name ','required');
         if ($this->form_validation->run()==FALSE) {
               $this->add();
-        }else{
+        }else{ 
             $data['unit_name'] = ucfirst($this->input->post('unit_name'));
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['created_by'] = $this->user_login_id;

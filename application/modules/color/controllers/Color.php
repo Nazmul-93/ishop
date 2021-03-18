@@ -46,7 +46,7 @@ class Color extends MX_Controller {
         $this->load->view('master/backend_master',$data);
 	} 
 	
-	public function save(){
+	public function save(){ 
         
         $this->form_validation->set_rules('color_title','Color Title ','required | is_unique');
         $this->form_validation->set_rules('color_code','Color Code ','required | is_unique');

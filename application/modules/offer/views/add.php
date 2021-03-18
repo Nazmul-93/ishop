@@ -16,7 +16,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Offer Name</label>
                             <div class="input-group col">
-                                <input class="form-control" name="offer_name"placeholder="i.e Festival Offer">
+                                <input class="form-control" name="offer_name"placeholder="i.e Festival Offer" required>
                             </div>
                         </div> 
                         <div class="form-group row">
@@ -40,19 +40,19 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Offer Amount</label>
                             <div class="input-group col">
-                                <input class="form-control" name="offer_amount"placeholder="i.e 100Tk or 5%">
+                                <input class="form-control" name="offer_amount"placeholder="i.e 100Tk or 5%" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Offer Start Date</label>
                             <div class="input-group col">
-                                <input type="date" class="form-control"name="offer_start_date">
+                                <input type="date" class="form-control"name="offer_start_date" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Offer End Date</label>
                             <div class="input-group col">
-                                <input type="date" class="form-control" name="offer_end_date">
+                                <input type="date" class="form-control" name="offer_end_date" required>
                             </div>
                         </div>
                         

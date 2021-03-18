@@ -16,7 +16,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Color Title</label>
                             <div class="input-group col">
-                                <input class="form-control" id="colorname" name="color_title"placeholder="i.e Black">
+                                <input class="form-control" id="colorname" name="color_title"placeholder="i.e Black" required>
                             </div>
                             <span id="colorname_result"></span>
                         </div>
@@ -24,7 +24,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Color Code</label>
                             <div class="input-group col">
-                                <input class="form-control" id="colorcode" name="color_code"placeholder="i.e #000000">
+                                <input class="form-control" id="colorcode" name="color_code"placeholder="i.e #000000" required>
                             </div>
                             <span id="colorcode_result"></span>
                         </div>

@@ -18,7 +18,7 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">Product Name</label>
                             <div class="input-group col">
-                                <input class="form-control" id="productname" name="product_name"placeholder="i.e iPhone">
+                                <input class="form-control" id="productname" name="product_name"placeholder="i.e iPhone" required>
                             </div>
                             <span id="productname_result"></span>
                         </div>
